@@ -1,7 +1,9 @@
 <?php
-    
+    session_start();
+
     require '../config/db.php';
     $msg = "";
+
     if (isset($_POST["submit"])){
 
         $email = $_POST['email'];
@@ -13,7 +15,14 @@
             $data = $result->fetch_assoc();
 
             if (password_verify($password, $data['password'])){
-                header("Location:../dashboard.php");
+                $_SESSION['name'] = $data['name'];
+                $_SESSION['role'] = $data['role'];
+
+                if ($data['role'] == 'admin'){
+                    header("Location:../dashboard.php");
+                } else{
+                    header("Location:../user.php");
+                }
                 die;
             }
             else{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2024 at 06:11 PM
+-- Generation Time: Nov 28, 2024 at 06:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(0, 'floridina', 5000, '/upload/1732813880-590aaffc04124aaad61bf0c6a92598fc-5e690c173b1441c7e95d8c370df3c39c.jpg', '2024-11-28 17:11:20', NULL);
+(1, 'floridinas', 5000, '/upload/1732816277-7dd78222709f005d1c68bb4d90e0d480-2001_SMT_if_Another_Gate.webp', '2024-11-28 17:51:17', NULL);
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,41 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `password`, `photo`, `created_at`, `updated_at`) VALUES
-(0, '', 'ini@gmail.com', 'user', '$2y$10$G8YRS7.R5VyNyDg.E53i0.3EPAddqhTF1M5SYquZ.UPNqV6qt8S46', NULL, '2024-11-28 10:07:29', NULL);
+(1, 'Irfan', 'ini@gmail.com', 'user', '$2y$10$AN1/k005biN4f1DklGepjOhsZ2NIHEH1jv3QIg75kzrebiM/sHyEm', NULL, '2024-11-28 11:38:50', NULL),
+(2, 'admin', 'admin@gmail.com', 'admin', '$2y$10$9Ot9eBMpEv0FLS1YsGIHeeqsD1E6D1i5/IPGv0aZpwC6XG5.SGp4a', NULL, '2024-11-28 11:50:34', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

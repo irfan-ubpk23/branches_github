@@ -14,8 +14,8 @@
         </div>
         <div class="card-body">
             <form action="backend/register.php" method="POST">
-                <label for="username">Username : </label>
-                <input class="form-control" type="text" id="username" name="username">
+                <label for="name">Name : </label>
+                <input class="form-control" type="text" id="name" name="name">
                 <br>
                 <label for="email">Email : </label>
                 <input class="form-control" type="email" id="email" name="email">

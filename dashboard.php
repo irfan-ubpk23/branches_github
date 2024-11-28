@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (! isset($_SESSION['role']) or $_SESSION['role'] == 'user'){
+        header('Location:index.php');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +17,8 @@
 <body class="bg-secondary-subtle">
     <div class="container shadow pb-5 pt-5 bg-white">
 
-        <h1 class="text-center">Selamat datang admin</h1>
+        <h1 class="text-center">Selamat datang <?= $_SESSION['name'] ?></h1>
+        <a href="backend/logout.php">logout</a>
         <br>
         <div class="mx-2 my-2 row row-cols-2 align-items-center">
             <div class="col">
