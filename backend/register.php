@@ -1,7 +1,7 @@
 <?php
 
     require '../config/db.php';
-    
+
     $msg = "";
 
     if (isset($_POST["submit"])){
@@ -29,7 +29,7 @@
 
         $users = $conn->query("insert into users (name, email, password, created_at) values ('$name', '$email', '$password', '$created_at')");
 
-        header("Location:../dashboard.php");
+        header("Location:../index.php");
 
     }
 

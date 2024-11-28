@@ -1,5 +1,11 @@
 <?php
 
+    session_start();
+
+    if (! isset($_SESSION['role']) or $_SESSION['role'] == 'user'){
+        header('Location:index.php');
+    }
+
     require 'config/db.php';
 
     $id = $_GET['id'];
@@ -18,7 +24,8 @@
 <body class="bg-secondary-subtle">
     <div class="container shadow pb-5 pt-5 bg-white">
 
-        <h1 class="text-center">Selamat datang admin</h1>
+        <h1 class="text-center">Selamat datang <?= $_SESSION['name'] ?></h1>
+        <a href="backend/logout.php">logout</a>
         <br>
         <a href="dashboard.php" class="btn btn-primary">Kembali <</a>
         <h5 class="mt-2">Edit Produk</h5>
