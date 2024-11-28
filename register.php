@@ -10,19 +10,25 @@
 <body class="bg-primary">
     <div class="card w-50 mx-auto mt-5">
         <div class="card-header">
-            <h1 class="card-text text-center">Login</h1>
+            <h1 class="card-text text-center">Register</h1>
         </div>
         <div class="card-body">
-            <form action="backend/login.php" method="POST">
+            <form action="backend/register.php" method="POST">
+                <label for="username">Username : </label>
+                <input class="form-control" type="text" id="username" name="username">
+                <br>
                 <label for="email">Email : </label>
                 <input class="form-control" type="email" id="email" name="email">
                 <br>
                 <label for="password">Password : </label>
-                <input class="form-control"type="password" id="password" name="password">
+                <input class="form-control" type="password" id="password" name="password">
+                <br>
+                <label for="confirmpass">Confirm Password : </label>
+                <input class="form-control" type="password" id="confirmpass" name="confirmpass">
                 <br>
                 <div class="w-100">
-                    <Button class="btn btn-primary w-50 mx-auto d-block" type="submit" name="submit">Login</Button>
-                    <a href="register.php" class="text-center d-block w-100">Register</a>
+                    <Button class="btn btn-primary w-50 mx-auto d-block" type="submit" name="submit">Register</Button>
+                    <a href="index.php" class="text-center d-block w-100">Login</a>
                 </div>
             </form>
         </div>
